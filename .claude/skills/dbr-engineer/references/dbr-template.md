@@ -131,13 +131,60 @@ SMACNA, CIBSE, NFPA, IEC, ASME, local regulations, client standards, process
 standards. Don't invent clause numbers, and don't claim a standard was "checked"
 unless its applicable requirements were actually reviewed against the design.
 
+## Standards validation (not just citation)
+
+"Correct" means the design values actually satisfy the standards named for them —
+listing ASHRAE 62.1 in the Codes & Standards table doesn't mean anything on its own if
+nobody checked the fresh-air rate against it. Citing a standard without checking
+against it is worse than not citing one, because it reads as verified when it isn't —
+so treat every applicable standard as something to check *against*, not just name.
+
+For every design parameter that a code or standard actually governs — fresh-air rates,
+minimum/maximum indoor conditions, ACH, fire/smoke exhaust and pressurization,
+electrical room cooling, kitchen exhaust hood/makeup air ratios, pool dehumidification,
+cleanroom classification requirements, refrigerant safety (e.g. IS/ASHRAE 15 machine
+room ventilation) — build a compliance table:
+
+`Design Parameter | Value Used | Governing Standard, Edition & Clause/Table | Required Value | Status | Verification Method`
+
+`Status` is one of: **Compliant**, **Non-Compliant** (flag immediately, don't bury it),
+or **Not Independently Verified** (you're citing the standard's general intent but
+haven't confirmed the exact numeric threshold).
+
+Two honesty rules that matter more than they might seem:
+
+1. **Don't state a specific numeric threshold (a table value, a clause number, an
+   exact cfm/person figure) from memory with unearned confidence.** Codes get revised
+   between editions, and a wrong number presented as a verified fact is a liability, not
+   a convenience. If you're confident from training knowledge and it's a widely stable,
+   commonly-cited value (e.g. "ASHRAE 62.1 commonly cites ~5 cfm/person minimum
+   ventilation for many space types"), say so as general guidance and mark it Not
+   Independently Verified. If the project is high-stakes on that parameter (life
+   safety, a code minimum that drives equipment sizing) and a web search tool is
+   available in this session, look up the current published requirement rather than
+   relying on recall, then mark it Compliant/Non-Compliant with the source and date.
+2. **Never mark something Compliant just because it wasn't contradicted.** Compliant
+   means the value was actually compared against a real, named number from the
+   standard. Absence of a red flag isn't the same as a verified pass — if you can't
+   pin down the actual required value, the honest status is Not Independently
+   Verified, not Compliant.
+
+Where a standard's requirement is genuinely jurisdiction- or authority-specific (e.g.
+Dubai Municipality vs. a free-zone authority, a state pollution-control board, a local
+fire authority amendment to NFPA), say so explicitly and flag which authority's version
+governs — don't default to the generic international standard if a local regulation
+actually overrides it.
+
 ## Validation checklist (run before issuing)
 
 Heat balance, air balance, water balance, chiller capacity check, PCW capacity check,
 cooling tower check, pump check, diversity check, redundancy check, margin check,
-indoor-condition check, process-requirement check, standards check. Flag every
-inconsistency you find — don't smooth one over to make the report look more finished
-than it is.
+indoor-condition check, process-requirement check, and a **standards check** — meaning
+the standards validation table above, actually populated, not a checkbox. Flag every
+inconsistency and every Non-Compliant or Not-Independently-Verified row you find —
+don't smooth one over to make the report look more finished than it is. A DBR with an
+honest "Not Independently Verified" row is more correct than one with a confident wrong
+number in its place.
 
 ## Quality bar
 

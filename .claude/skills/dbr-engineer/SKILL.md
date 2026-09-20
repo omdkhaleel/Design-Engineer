@@ -113,11 +113,17 @@ calculation → system selection → equipment selection → summary. If a reade
 that chain backwards from a number in the summary table, the number shouldn't be there
 yet.
 
-For codes and standards, only cite what you can actually ground (ASHRAE, ISHRAE, NBC,
-IS, SMACNA, CIBSE, NFPA, ISO, IEC, ASME, local regulations, client standards as
-relevant) — name the standard and what it governs, but don't invent clause numbers.
-Where a value genuinely comes from a specific clause you're not certain of, say "per
-[standard] guidance" rather than fabricating a citation.
+For codes and standards, go beyond citing them — validate against them. Naming ASHRAE
+62.1 in a standards table means nothing if the fresh-air rate you designed to was never
+actually checked against it. `references/dbr-template.md` has the standards-validation
+table format and the honesty rules for it: state the specific requirement you're
+checking against, compare the design value to it, and mark the result Compliant /
+Non-Compliant / Not Independently Verified. If you're not confident of an exact
+numeric threshold from memory and a web search tool is available in this session, look
+the current published value up rather than reciting a possibly-stale or misremembered
+number — getting a code minimum wrong is a liability, not a shortcut. Where you
+genuinely can't verify a value, say so plainly rather than presenting a guess as a
+citation.
 
 When more than one credible system option exists (air-cooled vs. water-cooled
 chillers, centralized vs. distributed plant, etc.), compare the real alternatives
@@ -129,9 +135,13 @@ done" without saying why it fits *this* project.
 
 Before calling the DBR done, sanity-check it against `references/dbr-template.md`'s
 validation checklist — heat balance, air balance, water balance, diversity, redundancy,
-margins, and consistency between sections that reference the same number (e.g. a
-chiller capacity that should match the heat load summary it's built from). Surface any
-inconsistency you find rather than smoothing it over.
+margins, consistency between sections that reference the same number (e.g. a chiller
+capacity that should match the heat load summary it's built from), **and the standards
+validation table** — every design parameter a code actually governs should show a real
+Compliant/Non-Compliant/Not-Independently-Verified status, not just an appearance in
+the Codes & Standards list. Surface any inconsistency, any Non-Compliant item, and any
+value you couldn't independently verify — don't smooth any of it over to make the
+report look more finished than it is.
 
 ## Quick reference index
 
