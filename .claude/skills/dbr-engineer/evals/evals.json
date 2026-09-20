@@ -1,0 +1,17 @@
+{
+  "skill_name": "dbr-engineer",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We're doing the MEP design for a new 5-star hotel in Dubai — about 500 keys, includes a banquet hall for 800 pax, an all-day dining restaurant, a spa, and an outdoor pool. We're at basic engineering / FEED stage. Can you prepare the HVAC design basis report?",
+      "expected_output": "Should NOT produce a full DBR immediately. Should return Project Understanding, Classification (Hotel/Commercial), a DBR Configuration Matrix that marks Process Load/PCW/Cleanroom as Not Applicable and HVAC System Description/Heat Load/Ventilation & Exhaust (kitchen, pool dehumidification) as Applicable, list critical data gaps (climate data for Dubai, occupancy details, envelope data), preliminary assumptions clearly labeled, and a short list of critical questions — then propose next steps rather than inventing load numbers.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "We are setting up a solar PV cell manufacturing plant in Gujarat, India. Operation is 24x7. The process includes cleanroom areas (diffusion, texturing, screen printing) and needs a process cooling water (PCW) system for the furnaces and coating equipment. We're at FEED stage. Prepare the design basis report for HVAC and process cooling.",
+      "expected_output": "Should NOT produce a full DBR immediately. Should classify as Industrial/Solar Manufacturing with Cleanroom + PCW + Chiller Plant + Redundancy all triggered as Applicable in the configuration matrix, correctly flag process heat rejection / PCW supply-return temps / cleanroom ISO class / production capacity as critical missing data requiring the user (not assumed), and ask only material questions — not attempt to output final chiller TR or PCW flow numbers without that data.",
+      "files": []
+    }
+  ]
+}
